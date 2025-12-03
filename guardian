@@ -1,0 +1,74 @@
+# Comandos de Git para trabajar con repositorios, carpetas y directorios
+
+## 1. Entrar a la carpeta del proyecto (o directorio)
+cd ~/guardian
+# Reemplaza "guardian" con el nombre de tu carpeta o directorio.
+
+## 2. Verificar si estC! conectado a GitHub (o a un repositorio remoto)
+git remote -v
+# Si aparece algo como:
+# origin (fetch)
+# origin (push)
+# Entonces ya estC!s dentro del repo.
+
+## Si NO aparece nada, agregar el repositorio remoto
+git remote add origin <URL_del_repositorio>
+# Reemplaza <URL_del_repositorio> con la URL de tu repositorio en GitHub, GitLab, Bitbucket, etc.
+# Ejemplo:
+# git remote add origin https://github.com/josecontreras1993/guardian.git
+
+## 3. Entrar al repositorio desde la carpeta actual
+# Ya estC!s dentro con solo estar en:
+# cd ~/guardian
+# Git NO tiene un "entrar al repositorio", el repositorio es la carpeta donde estC!s parado.
+
+## 4. Subir los cambios al repositorio remoto
+git add .
+# Agrega todos los archivos modificados al "staging area" (C!rea de preparaciC3n).
+git commit -m "Mensaje descriptivo de los cambios"
+# Crea un "commit" (confirmaciC3n) con un mensaje que describe los cambios que hiciste.
+# Es importante escribir mensajes claros y concisos para que otros puedan entender tus cambios.
+git push origin main
+# EnvC-a los commits al repositorio remoto (en la rama "main").
+# (Si tu rama es master usa master en vez de main.)
+
+## 5. Crear una nueva rama (branch)
+git branch <nombre_de_la_rama>
+# Crea una nueva rama con el nombre que elijas.
+# Las ramas son C:tiles para trabajar en nuevas funcionalidades o para solucionar errores sin afectar la rama principal.
+git checkout <nombre_de_la_rama>
+# Cambia a la rama que acabas de crear.
+
+## 6. Fusionar una rama con la rama principal (merge)
+git checkout main
+# Cambia a la rama principal (generalmente "main" o "master").
+git merge <nombre_de_la_rama>
+# Fusiona los cambios de la rama que especificaste con la rama principal.
+git push origin main
+# EnvC-a los cambios fusionados al repositorio remoto.
+
+## 7. Clonar un repositorio existente
+git clone <URL_del_repositorio>
+# Clona (copia) un repositorio desde una URL remota a tu computadora local.
+# Ejemplo:
+# git clone https://github.com/josecontreras1993/guardian.git
+
+## 8. Inicializar un nuevo repositorio en una carpeta existente
+git init
+# Convierte una carpeta existente en un repositorio de Git.
+
+## 9. Comandos C:tiles para trabajar con archivos y carpetas
+ls -l
+# Lista los archivos y carpetas en el directorio actual con detalles como permisos, tamaC1o y fecha de modificaciC3n.
+mkdir <nombre_de_la_carpeta>
+# Crea una nueva carpeta con el nombre que especifiques.
+touch <nombre_del_archivo>
+# Crea un nuevo archivo con el nombre que especifiques.
+rm <nombre_del_archivo>
+# Elimina un archivo. B!Cuidado! Esta acciC3n es irreversible.
+rm -r <nombre_de_la_carpeta>
+# Elimina una carpeta y todo su contenido. B!Cuidado! Esta acciC3n es irreversible.
+
+# Recuerda que estos son solo algunos de los comandos mC!s bC!sicos de Git.
+# Git es una herramienta muy poderosa y versC!til, y hay muchos otros comandos y opciones que puedes explorar.
+# B!Te animo a seguir aprendiendo y experimentando!
